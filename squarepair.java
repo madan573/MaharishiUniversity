@@ -31,6 +31,7 @@ public class squarepair {
 //count square function
 	public static int countSquarePairs(int[] b) {
 		int count=0,sum=0,sq=0;
+		if(b.length>1) {
 		for(int i=0;i<b.length-1;i++) {
 			if(b[i]<=0) {
 				continue;
@@ -42,7 +43,7 @@ public class squarepair {
 				count++;
 			}
 		}
-		
+		}
 		}
 		
 		return count;
