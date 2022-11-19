@@ -20,5 +20,4 @@ public class LargestAdjacentSum {
 		}
 		return largestSum;
 	}
-
 }
