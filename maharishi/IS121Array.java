@@ -4,7 +4,7 @@ public class IS121Array {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int [] a = {1,2,1};
+		int [] a = {1,1,2,2,2,1,1};
 		int res = is121Array(a);
 		System.out.println(res);
 	}
