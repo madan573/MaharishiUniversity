@@ -10,7 +10,7 @@ public class SetEqual {
 	}
 	
 	static int isSetEqual(int[] a, int[] b) {
-		int x=a.length,f=0, y=b.length;
+		int f=0;
 			for(int i=0; i<a.length;i++) {
 				f=0;
 				for(int j=0;j<b.length;j++) {
