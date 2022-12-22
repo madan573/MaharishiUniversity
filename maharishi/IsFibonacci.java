@@ -10,7 +10,7 @@ public class IsFibonacci {
 		int first =1; 
 		int second =1;
 		int temp;
-		if(n<1) return 0;
+		if(n==1) return 1;
 		for(int i=1;i<n;i++) {
 			temp = first+second;
 			if(temp>n) {
