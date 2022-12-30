@@ -9,24 +9,13 @@ public class stantonMeasur {
 		System.out.println(res);
 	}
 	public static int stantonMeasure(int[] a) {
-		int count=0,c=0;
-		if(a.length==0) {
-			return 0;
-		}
-		if(a[0]==0 && a.length==1) {
-			return 1;
+		int count=0,oneCount=0;
+		for(int i=0;i<a.length;i++) {
+			if(a[i]==1) oneCount++;
 		}
 		for(int i=0;i<a.length;i++) {
-			if(a[i]==1) {
-				c++;
-			}
+			if(a[i]==oneCount) count++;
 		}
-		for(int i=0;i<a.length;i++) {
-			if(a[i]==c) {
-				count++;
-			}
-		}
-		
 		return count;
 	}
 }
