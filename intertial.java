@@ -1,71 +1,37 @@
-/*An array is inertial if it holds following 3 conditions:
- * 1. it contains at least one odd value.
- * 2. the maximum value in the array is even.
- * 3. every odd value is greater than every even value that is not the maximum value.
- * 
- */
 public class intertial {
 public static void main(String[] args) {
-	int [] a = {11,4,20,9,2,6};
-	int r = isIntertial(a);
-	if(r==1) {
-	System.out.println("the array is interial");
-	}else {
-		System.out.println("The array is not interial");
-	}
+	int [] a = {11,4,20,9,2,8};
+	System.out.println(isIntertial(a));
 }
 public static int isIntertial(int[] a) {
-	int ret = 0;
-	int max=0,count_odd=0;
-	count_odd = oddCount(a);
-	max = maxValue(a);
-	if(count_odd>=1 && max == 1) {
-		ret=1;
+	int maxOdd=0,minOdd=0,maxEven=0,count_odd=0, count_even=0;
+	for(int i=0;i<a.length;i++) {
+		if(a[i]%2!=0) {
+			maxOdd=a[i];
+minOdd=a[i];
+count_odd = 1;
+		}else{
+			maxEven=a[i];
+			count_even=1;
+		}
+		if(count_even==1 && count_odd==1) break;
 	}
-	return ret;
+	if(count_odd==0 || count_even==0) return 0;
+	for(int i=0;i<a.length;i++) {
+	if(a[i]%2==0){		
+if(a[i]>maxEven) maxEven = a[i];
+	}else{
+		if(a[i]>maxOdd) maxOdd=a[i];
+		if(a[i]<minOdd) minOdd=a[i];
+	}
+	}
+	if(maxOdd>maxEven) return 0;
+	for(int i=0;i<a.length;i++) {
+		if(a[i]==maxEven) continue;
+		if(a[i]%2==0){
+			if(a[i]>minOdd) return 0;
+		}
+	}
+	return 1;
 }
-//1. to count odd value
-public static int oddCount(int[] b) {
-	int c = 0;
-	for(int i=0;i<b.length;i++) {
-		if(b[i]%2!=0) {
-			c++;
-		}
-	}
-	return c;
-}
-//2. maximum value in an array and check 3 condition
-public static int maxValue(int[] c) {
-	int max=0,lowodd,ret=0;
-	for(int i=0;i<c.length;i++) {
-		if(c[i]>=max) {
-			max = c[i];
-		}
-	}
-	if(max%2!=0) {
-		return ret;
-	}else {
-	lowodd = max;
-	for(int i=0;i<c.length;i++) {
-		
-		if(c[i]%2==1 && c[i]<lowodd) {
-			lowodd=c[i];
-		}
-		
-	}
-	
-	for(int j=0;j<c.length;j++) {
-		
-		if(c[j]%2==0) {
-			 if(c[j]==max) {continue;}
-			if(lowodd>c[j]) {			
-			ret =1;
-			}else { ret =0;}
-			
-		}
-	}
-	}
-	return ret;
-}
-
 }
