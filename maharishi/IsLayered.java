@@ -13,21 +13,14 @@ public class IsLayered {
 		}
 		int count=1;
 		for(int i=0;i<a.length-1;i++) {
-			if(a[i]<=a[i+1]) {
-				if(a[i]==a[i+1]) {
-					count++;
-					continue;
-				}else {
-					if(count<2) {
-						return 0;
-					}else {
-						count=1;
-					}
-				}
-		}else {
-			return 0;
+			if(a[i]>a[i+1]) return 0;
+			if(a[i]==a[i+1]) {
+				count++;
+				continue;
+			}
+			count=1;
 		}
-		}
-		return 1;
+		if(count>=2) return 1;
+		return 0;
 	}
 }
