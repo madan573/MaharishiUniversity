@@ -1,16 +1,9 @@
 package maharishi;
 
 public class centerFifteen {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		int[] arr = {1,2,3,10,5,15,1};
-		int ret = isCentered15(arr);
-		if(ret==1) {
-			System.out.println("centered 15 array");
-		}else {
-			System.out.println("Not centered 15 array");
-		}
+		System.out.println(isCentered15(arr));
 	}
 	public static int isCentered15(int[] a) {
 		int r=0,sum=0,clast=0,cstart=a.length/2-1;
