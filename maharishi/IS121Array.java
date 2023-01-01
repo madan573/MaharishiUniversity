@@ -9,42 +9,19 @@ public class IS121Array {
 		System.out.println(res);
 	}
 	static int is121Array(int [] a) {
-		int r=0,count=0;
-		if(a[0]!=1 || a.length<=2) {
-			return 0;
-		}
-		for(int i=0,j=a.length-1;i<=j;i++,j--) {
-			
+		if(a[0]!=1 || a[a.length/2]!=2 || a.length<=2) return 0;
+		int last=a.length-1;
+		for(int i=0;i<=last;i++) {
 			if(a[i]==1) {
-				if(a[j]!=1) {
-					r=0;
-					break;
-				}
-			}
-			if(a[j]==1) {
-				if(a[i]!=1) {
-					r=0;
-					break;
-				}
+				if(a[last]!=1) return 0;
 			}
 			if (a[i]==2 ) {
-				if(a[j]==2) {
-					count++;	
-				}else {
-					r=0;
-					break;
-				}
-				
+				if(a[last]!=2) return 0;
 			}
-			if(a[i]==0||a[i]==3||a[i]==4||a[i]==5||a[i]==6||a[i]==7||a[i]==8||a[i]==9 ){
-				r=0;
-				break;
-			}
+			if(a[i]!=1 && a[i]!=2 ) return 0;
+			last --;
 		}
-		if(count>0) {
-			r=1;
-		}
-		return r;
+		return 1;
 	}
 
 }
