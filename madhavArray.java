@@ -21,17 +21,17 @@ public class madhavArray{
     {
         int sum, c=0;
         if(arraySize(a.length)==1) {
-        for(int i=0;i<a.length;i=i+c){
-            sum=0;
-            for(int j=i;j<=i+c;j++){
-                sum =sum+a[j];
-            }
-            if(sum!=a[0]){
-                return 0;
-            }
-            c++;
-        }
-        return 1;
+	        for(int i=0;i<a.length;i=i+c){
+	            sum=0;
+	            for(int j=i;j<=i+c;j++){
+	                sum =sum+a[j];
+	            }
+	            if(sum!=a[0]){
+	                return 0;
+	            }
+	            c++;
+	        }
+	        return 1;
         }
         return 0;
     }
