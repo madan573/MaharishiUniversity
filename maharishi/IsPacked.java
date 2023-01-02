@@ -9,34 +9,17 @@ public class IsPacked {
 		System.out.println(res);
 	}
 	static int isPacked(int[] a) {
-		int r =0,count;
-		if(a.length==0) {
-			r= 1;
-		}
+		if(a.length==0) return 1;
 		for(int i=0;i<a.length;i=i+a[i]) {
-			count =1;
-			if(a[i]<1) {
-				r=0;
-				break;
-			}
-		
+			int count =1;
+			if(a[i]<1) return 0;		
 			for(int j=i+1;j<a.length;j++) {
-				if(a[j]==a[i]) {
-					count++;
-				}else {
-					r=0;
-					break;
+				if(a[j]==a[i]) 	count++;
+				else break;
 				}
-			}
-			if(count==a[i]) {
-				r=1;
-			}else {
-				r=0;
-				break;
-			}
+			if(count!=a[i]) return 0;
 		}
-			
-		return r;
+		return 1;
 	}
 
 }
