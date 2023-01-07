@@ -1,10 +1,7 @@
 package maharishi;
-
 public class LargestDifferenceOfEvens {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		int[] a = {1,-2,3,4,10};
+		int[] a = {11,-2,3,4,10};
 		int res = largestDifferenceOfEvens(a);
 		System.out.print(res);
 	}

@@ -1,9 +1,10 @@
 package maharishi;
 public class ComputeDepth {
 	public static void main(String[] args) {
-		int depth = computeDepth(42);
+		int depth = computeDepth(22);
 		System.out.println(depth);
 	}
+	
 	static int computeDepth(int n) {
 		int[] a=new int[10];
 		for(int i=0;i<10;i++) a[i]=-1;
